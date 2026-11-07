@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratoire de cybersécurité</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.card {
+  background: white;
+  width: 90%;
+  max-width: 390px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px #0002;
+  text-align: center;
+}
+h2 { color: #202124; }
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 6px;
+  background: #1769d2;
+  color: white;
+  font-weight: bold;
+}
+#result {
+  display: none;
+  margin-top: 20px;
+  padding: 14px;
+  background: #e8f3ff;
+  border-radius: 8px;
+  text-align: left;
+}
+small { color: #666; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>CyberLab</h2>
+  <p>Simulation de sécurité des comptes</p>
+
+  <form id="test">
+    <input type="email" placeholder="Adresse fictive" required>
+    <p><small>Ne saisis aucune véritable adresse ni aucun mot de passe.</small></p>
+    <button type="submit">Lancer la simulation</button>
+  </form>
+
+  <div id="result">
+    <h3>Simulation terminée !</h3>
+    <p>Tu viens de tester une page de connexion fictive.</p>
+    <p><b>À retenir :</b></p>
+    <ul>
+      <li>Vérifie toujours le nom de domaine.</li>
+      <li>Ne clique pas sur les liens suspects.</li>
+      <li>Ne communique jamais ton mot de passe.</li>
+      <li>Active la validation en deux étapes.</li>
+    </ul>
+    <b>Aucune donnée n'a été envoyée ou enregistrée.</b>
+  </div>
+</div>
+
+<script>
+document.getElementById("test").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("result").style.display = "block";
+});
+</script>
+
+</body>
+</html>
